@@ -1,0 +1,42 @@
+.statistics{
+display: block;
+ /* height: 200px; */
+ font-size: 88%;
+ border: 1px solid black;
+}
+
+.title{
+    display: block;
+    height: 50%;
+    background-color: white;
+    text-align: center;
+    margin: 0;
+    padding: auto;
+    height: 90px;
+    padding-top: 3%;
+}
+
+.stat-list{
+display: flex;
+height: 90px;    
+list-style-type: none;
+width: 100%;
+padding: 0;
+margin: 0;
+}
+
+.item{
+ background-color: saddlebrown;
+ padding: 0.5em;
+ padding-top: 2%;
+}
+
+.label{
+ font-size: 50%;
+ display: block;
+ margin: 0;
+}
+
+.percentage{
+ display: block;
+}

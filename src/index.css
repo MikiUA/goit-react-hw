@@ -7,9 +7,46 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 40px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.task-flex-display{
+  display: flex;
+  justify-content: 'center';
+  align-items: 'center';
+  /* color: '#010101'; */
+  flex-wrap: wrap;
+}
+.task-wrapper {
+  /* width:500px;/ */
+  border: 1px solid black;
+  margin:50px;
+  padding:25px;
+  background-color: #eaeff3;
+}
+
+.selector-wrapper{
+  display: flex;
+  font-size: medium;
+}
+.selector-item{
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+}
+.selector-item.selected{
+  background-color: antiquewhite;
+}
+.selector-item:hover{
+  background-color: aqua;
+}
+
+.selector-item.selected:hover{
+  background-color: antiquewhite;
 }
