@@ -11,7 +11,7 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <h1>Test render</h1>
-    <BrowserRouter  basename='/'>
+    <BrowserRouter  basename='/goit-react-hw'>
     {/* <BrowserRouter basename={baseURL}>  */}
       <NavSelector/>
       <Routes>
