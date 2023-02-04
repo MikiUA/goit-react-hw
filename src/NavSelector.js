@@ -9,7 +9,7 @@ export default function NavSelector() {
   return (
     <div className='selector-wrapper'>
       {appRoutes.map(({path,label})=>{
-        if (!label) return;
+        if (!label) return false;
         path+=baseURL;
         return (
         <Link 
