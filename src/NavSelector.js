@@ -10,7 +10,7 @@ export default function NavSelector() {
     <div className='selector-wrapper'>
       {appRoutes.map(({path,label})=>{
         if (!label) return false;
-        path+=baseURL;
+        //path+=baseURL;
         return (
         <Link 
           key={path} 
