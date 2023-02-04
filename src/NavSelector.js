@@ -4,12 +4,11 @@ import {appRoutes} from 'appRoutes'
 
 
 
-export default function NavSelector({log}) {
-  console.log(log);
+export default function NavSelector() {
   const [selectedItem,setSelectedItem]=useState(window.location.pathname)
   return (
     <div className='selector-wrapper'>
-      {appRoutes.map(({path,label,description})=>(
+      {appRoutes.map(({path,label})=>(
         label?
         <Link 
           key={path} 

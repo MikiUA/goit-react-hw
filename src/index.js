@@ -6,14 +6,14 @@ import appRoutes from './appRoutes';
 import NavSelector from 'NavSelector';
 import './index.css';
 
- const baseUrl = window.location.origin;
+//  const baseUrl = window.location.origin;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <h1>Test render</h1>
     <BrowserRouter  basename='/'>
     {/* <BrowserRouter basename={baseURL}>  */}
-      <NavSelector log={baseUrl}/>
+      <NavSelector/>
       <Routes>
         {appRoutes.map((route, index) => {
           const { element, ...rest } = route;
