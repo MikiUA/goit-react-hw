@@ -3,6 +3,7 @@ import { App as App1 } from "hw-01-components/App";
 import { App as App21 } from "hw-02-feedback/App";
 import { App as App22 } from "hw-02-phonebook/App";
 
+export const baseURL='/goit-react-hw'
 export const appRoutes = [
   {
     index: true,

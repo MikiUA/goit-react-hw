@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter,Route, Routes} from 'react-router-dom';
 
-import appRoutes from './appRoutes';
+import appRoutes, { baseURL } from './appRoutes';
 import NavSelector from 'NavSelector';
 import './index.css';
 
@@ -10,8 +10,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <h1>Test render</h1>
-    <BrowserRouter  basename='/goit-react-hw'>
+    <BrowserRouter  basename={baseURL}>
     {/* <BrowserRouter basename={baseURL}>  */}
       <NavSelector/>
       <Routes>
