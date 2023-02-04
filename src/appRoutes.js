@@ -6,10 +6,9 @@ import { App as App22 } from "hw-02-phonebook/App";
 export const baseURL='/goit-react-hw'
 export const appRoutes = [
   {
-    index: true,
     path: '/',
     label: 'Home',
-    element: <>Hey Boy</>
+    element: <Notification label='This is a homework page' message="Select a task you want to see in the navigation menu"/>
   },
   {
     path: '/*',

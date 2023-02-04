@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
-import {appRoutes, baseURL} from 'appRoutes'
+import {appRoutes} from 'appRoutes'
 
 
 
@@ -10,7 +10,6 @@ export default function NavSelector() {
     <div className='selector-wrapper'>
       {appRoutes.map(({path,label})=>{
         if (!label) return false;
-        //path+=baseURL;
         return (
         <Link 
           key={path} 

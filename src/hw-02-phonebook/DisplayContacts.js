@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { ContactList } from './styles/ContactDisplay.styled';
+import { FormInput } from './styles/AddContactForm.styled';
 
 function DisplayContacts({contacts}) {
   const [filter,setFilter]=useState('');
@@ -13,9 +14,10 @@ function DisplayContacts({contacts}) {
 
   return (
     <div>
-      <input 
+      <FormInput
         type='text' 
         value={filter} 
+        placeholder='find a contact'
         onChange={(e)=>setFilter(e.target.value.toUpperCase())}
       />
       <ContactList>
