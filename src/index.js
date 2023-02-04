@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <h1>Test render</h1>
     <BrowserRouter  basename='/'>
     {/* <BrowserRouter basename={baseURL}>  */}
-      <NavSelector />
+      <NavSelector log={baseUrl}/>
       <Routes>
         {appRoutes.map((route, index) => {
           const { element, ...rest } = route;

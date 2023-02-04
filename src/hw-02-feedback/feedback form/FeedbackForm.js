@@ -5,7 +5,7 @@ import { FormButton, FormWrapper } from './styles/FeedbackForm.styled';
 function FeedbackForm({options,onLeaveFeedback}) {
     //const options=['good','bad','neutral']
     //onLeaveFeedback is a function that has setState inside it
-    console.log(onLeaveFeedback);//оцей лог повинен викликатися один раз за кожний ререндер
+    // console.log(onLeaveFeedback);//оцей лог повинен викликатися один раз за кожний ререндер
     //TODO ask why this component rerenders every time i press a button
   return (
     <FormWrapper>

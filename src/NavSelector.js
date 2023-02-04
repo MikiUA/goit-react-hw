@@ -4,7 +4,8 @@ import {appRoutes} from 'appRoutes'
 
 
 
-export default function NavSelector() {
+export default function NavSelector({log}) {
+  console.log(log);
   const [selectedItem,setSelectedItem]=useState(window.location.pathname)
   return (
     <div className='selector-wrapper'>

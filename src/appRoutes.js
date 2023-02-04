@@ -1,10 +1,8 @@
-
 import Notification from "generalComponents/Notification";
 import { App as App1 } from "hw-01-components/App";
 import { App as App21 } from "hw-02-feedback/App";
 import { App as App22 } from "hw-02-phonebook/App";
 
-export const basePath='http://localhost:3000'
 export const appRoutes = [
   {
     index: true,
