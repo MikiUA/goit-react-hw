@@ -6,12 +6,13 @@ import appRoutes from './appRoutes';
 import NavSelector from 'NavSelector';
 import './index.css';
 
-//  const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
+ const baseUrl = window.location.origin;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <BrowserRouter  basename={baseUrl}> */}
-    <BrowserRouter basename='https://mikiua.github.io/goit-react-hw'> 
+    <h1>Test render</h1>
+    <BrowserRouter  basename='/'>
+    {/* <BrowserRouter basename={baseURL}>  */}
       <NavSelector />
       <Routes>
         {appRoutes.map((route, index) => {
