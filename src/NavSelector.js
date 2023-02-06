@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
-import {appRoutes} from 'appRoutes'
+import {appRoutes, baseURL} from 'appRoutes'
 
 
 
@@ -13,8 +13,8 @@ export default function NavSelector() {
         return (
         <Link 
           key={path} 
-          className={(selectedItem===path)?'selector-item selected':'selector-item'}
-          onClick={()=>(setSelectedItem(path))}
+          className={(selectedItem===baseURL+path)?'selector-item selected':'selector-item'}
+          onClick={()=>(setSelectedItem(baseURL+path))}
           to={path}>
             {label}
         </Link>

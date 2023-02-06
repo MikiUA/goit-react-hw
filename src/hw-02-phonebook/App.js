@@ -22,12 +22,16 @@ export function App() {
         number
       }]))
   }
+  function removeContact(contactID){
+    setContacts(prevState=>(prevState.filter(item=>item.id!==contactID)))
+//    this.setState(prevState => ({     	people: prevState.people.filter(person => person !== e.target.value)     }));
+  }
   return (
     <Section type='task' title='Книга контактів'>
       <Section label='Add contact'>
         <AddContactForm submitFunction={addContact}/></Section>
       <Section label='Contact list'>
-        <DisplayContacts contacts={contacts}/></Section>
+        <DisplayContacts contacts={contacts} removeContact={removeContact}/></Section>
     </Section>
   )
 }

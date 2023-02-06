@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { ContactList } from './styles/ContactDisplay.styled';
+import { ContactItem, ContactList, DeleteBtn } from './styles/ContactDisplay.styled';
 import { FormInput } from './styles/AddContactForm.styled';
 
-function DisplayContacts({contacts}) {
+function DisplayContacts({contacts, removeContact}) {
   const [filter,setFilter]=useState('');
 
   function checkItem(item){
@@ -22,9 +22,10 @@ function DisplayContacts({contacts}) {
       />
       <ContactList>
         {contacts.filter(checkItem).map(({id,name,number})=>(
-          <li key={id}>
+          <ContactItem key={id}>
             {name}:  {number}
-          </li>
+            <DeleteBtn onClick={()=>removeContact(id)}>Delete</DeleteBtn>
+          </ContactItem>
         ))}
       </ContactList>
     </div>
@@ -38,7 +39,8 @@ DisplayContacts.propTypes = {
       name:PropTypes.string,
       number:PropTypes.string
     })
-  ).isRequired
+  ).isRequired,
+  removeContact:PropTypes.func.isRequired
 }
 
 export default DisplayContacts
