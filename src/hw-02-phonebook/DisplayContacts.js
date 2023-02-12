@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { ContactItem, ContactList, DeleteBtn } from './styles/ContactDisplay.styled';
-import { FormInput } from './styles/AddContactForm.styled';
+import { FormButton, FormInput } from './styles/AddContactForm.styled';
 
-function DisplayContacts({contacts, removeContact}) {
+function DisplayContacts({contacts, removeContact, removeAllContacts,setTemplateContacts}) {
   const [filter,setFilter]=useState('');
 
   function checkItem(item){
@@ -20,6 +20,10 @@ function DisplayContacts({contacts, removeContact}) {
         placeholder='find a contact'
         onChange={(e)=>setFilter(e.target.value.toUpperCase())}
       />
+      <div style={{display:'flex'}}>
+        <FormButton onClick={()=>setTemplateContacts()}>Set template contacts</FormButton>
+        <FormButton onClick={()=>removeAllContacts()}>Remove all contacts</FormButton>
+      </div>
       <ContactList>
         {contacts.filter(checkItem).map(({id,name,number})=>(
           <ContactItem key={id}>
@@ -40,7 +44,9 @@ DisplayContacts.propTypes = {
       number:PropTypes.string
     })
   ).isRequired,
-  removeContact:PropTypes.func.isRequired
+  removeContact:PropTypes.func.isRequired,
+  removeAllContacts:PropTypes.func.isRequired,
+  setTemplateContacts:PropTypes.func.isRequired
 }
 
 export default DisplayContacts

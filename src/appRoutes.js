@@ -2,6 +2,8 @@ import Notification from "generalComponents/Notification";
 import { App as App1 } from "hw-01-components/App";
 import { App as App21 } from "hw-02-feedback/App";
 import { App as App22 } from "hw-02-phonebook/App";
+import App31 from "hw-03-phonebook/App";
+import App32 from "hw-03-image-finder/App";
 
 export const baseURL='/goit-react-hw'
 export const appRoutes = [
@@ -32,6 +34,18 @@ export const appRoutes = [
     label: '2.2',
     description: '',
     element: <App22/>
+  },
+  {
+    path: '/hw-03-phonebook',
+    label: '3.1',
+    description: '',
+    element: <App31/>
+  },
+  {
+    path: '/hw-03-image-finder',
+    label: '3.2',
+    description: '',
+    element: <App32/>
   },
 ];
 

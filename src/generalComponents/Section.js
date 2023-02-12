@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { SectionTitle, TaskContainer, TaskTitle, TaskWrapper } from './styles/Section.styled'
+import { SectionContainer, SectionTitle, TaskContainer, TaskTitle, TaskWrapper } from './styles/Section.styled'
 
 function Section({
     children=<></>,
@@ -16,10 +16,10 @@ function Section({
   //#region titled Section
   if (type==='titled'||type==='labeled'){
    return (
-    <>
+    <SectionContainer>
     <SectionTitle fontSize='40px'>{title}</SectionTitle>
     {children}
-    </>
+    </SectionContainer>
   )}
   //#endregion titled Section
 
