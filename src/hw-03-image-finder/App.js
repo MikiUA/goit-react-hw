@@ -39,7 +39,7 @@ export default function App() {
   },[filter])
 
 
-  useEffect(()=>{
+ useEffect(()=>{
     async function newPage(){
       let newItems = await sendRequest(filter,pageNum);
       updateImageList(newItems.hits)
@@ -49,6 +49,7 @@ export default function App() {
       setIsLoading('updating')
       newPage();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[pageNum])
 
 
