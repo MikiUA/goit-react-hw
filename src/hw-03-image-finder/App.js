@@ -67,7 +67,7 @@ export default function App() {
 async function sendRequest(filter,page){
   if (!filter) filter='';if (!page) page='';
   const THEurl = `https://pixabay.com/api/?image_type=photo&key=33557563-eb5e97db1c6663d33c38bf2d1&orientation=horizontal&per_page=12&page=` +page+'&q='+filter;
-  // const THEurl = `https://pixabay.com/api/?image_type=photo&key=33557563-eb5e97db1c6663d33c38bf2d1&orientation=horizontal&per_page=12&page=${page}&q=${filter}`
+  // const /THEurl = `https://pixabay.com/api/?image_type=photo&key=33557563-eb5e97db1c6663d33c38bf2d1&orientation=horizontal&per_page=12&page=${page}&q=${filter}`
   console.log(THEurl);
   return new Promise((resolve,reject)=>{
     fetch(THEurl,[])
