@@ -34,12 +34,12 @@ export function App() {
 
   return (
     <Section type='task' title='Книга контактів'>
-      <div style={{display:'flex',flexWrap:'wrap'}}>
       <Section label='Add contact'>
-        <AddContactForm submitFunction={addContact}/></Section>
+        <AddContactForm submitFunction={addContact}/>
+      </Section>
       <Section label='Contact list'>
         <DisplayContacts contacts={contacts} removeContact={removeContact} removeAllContacts={removeAllContacts} setTemplateContacts={setTemplateContacts}/></Section>
-        </div>    </Section>
+      </Section>
   )
 
   //#region contacts state functions
