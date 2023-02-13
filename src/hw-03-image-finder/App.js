@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import { LoadButton } from './components/Button'
 import ImageGallery from './components/ImageGallery'
 import { Searchbar } from './components/Searchbar'
-import './styles/styles.css'
 import {PixabayTitle} from './components/PixabayTitle'
 
 export default class App extends Component {
