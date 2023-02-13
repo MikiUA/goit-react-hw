@@ -1,6 +1,8 @@
+import styles from "./styles/Button.module.css"
 export const LoadButton = ({LoadMoreFunc}) => {
     return (
-    <button
+    <button 
+        className={styles.Button}
         onClick={()=>LoadMoreFunc()}
     >
         Load more

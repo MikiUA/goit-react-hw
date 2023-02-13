@@ -4,13 +4,14 @@ import { App as App21 } from "hw-02-feedback/App";
 import { App as App22 } from "hw-02-phonebook/App";
 import App31 from "hw-03-phonebook/App";
 import App32 from "hw-03-image-finder/App";
+import HomePage from "generalComponents/HomePage";
 
 export const baseURL='/goit-react-hw'
 export const appRoutes = [
   {
     path: '/',
     label: 'Home',
-    element: <Notification label='This is a homework page' message="Select a task you want to see in the navigation menu"/>
+    element: <HomePage/>
   },
   {
     path: '/*',

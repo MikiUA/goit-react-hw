@@ -1,16 +1,17 @@
+import styles from './styles/Searchbar.module.css'
 export const Searchbar = ({submitFunc}) => (
-    <header className="Searchbar">
+    <header className={styles["Searchbar"]}>
     <form onSubmit={e=>{
         e.preventDefault();
         submitFunc(e.target.elements.t3Filter.value)
         }}
-        className="SearchForm">
-      <button type="submit" className="SearchForm-button">
-        <span className="SearchForm-button-label">Search</span>
+        className={styles["SearchForm"]}>
+      <button type="submit" className={styles["SearchForm-button"]}>
+        <span className={styles["SearchForm-button-label"]}>Search</span>
       </button>
   
       <input
-        className="SearchForm-input"
+        className={styles["SearchForm-input"]}
          id='t3Filter'
         name="t3Filter"
         type="text"

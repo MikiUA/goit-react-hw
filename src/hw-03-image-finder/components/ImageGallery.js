@@ -4,6 +4,7 @@ import {ImageGalleryItem} from './ImageGalleryItem'
 import { Loader } from './Loader'
 import PropTypes from 'prop-types'
 import { Modal } from './Modal'
+import styles from './styles/ImageGallery.module.css'
 
 
 export default class ImageGallery extends Component {
@@ -26,7 +27,7 @@ export default class ImageGallery extends Component {
     return (
         <div>
         {this.state.modal?<Modal imgSrc={this.state.modal} onAbortF={()=>this.setState({modal:''})}/>:''}
-        <ul className="ImageGallery">
+        <ul className={styles['ImageGallery']}>
             {this.props.items.map((item)=>(
                 <ImageGalleryItem key={item.id} item={item} onClickF={(url)=>this.setState({modal:url})}/>
             ))}

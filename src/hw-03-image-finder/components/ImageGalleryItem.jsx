@@ -1,8 +1,11 @@
+import styles from './styles/ImageGalleryItem.module.css'
+
 export const ImageGalleryItem = ({item,onClickF}) => {
     const {webformatURL,largeImageURL} = item;
     return (
-    <li className="ImageGalleryItem" onClick={()=>onClickF(largeImageURL)}>
-        <img src={webformatURL} alt="" />
+    <li className={styles["ImageGalleryItem"]} onClick={()=>onClickF(largeImageURL)}>
+        <img className={styles["ImageGalleryItem-image"]}
+        src={webformatURL} alt="" />
         <br/>
     </li>
 )}
