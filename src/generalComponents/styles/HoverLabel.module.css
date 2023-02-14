@@ -1,0 +1,14 @@
+.HoverLabelWrapper{
+    position: relative;
+    display: block;
+}
+
+.HoverLabel{
+    
+    margin: 80% 90%;
+    font-size: 75%;
+    border: 1px solid black;
+    position: absolute;
+    background-color: antiquewhite;
+    line-height: normal;
+}

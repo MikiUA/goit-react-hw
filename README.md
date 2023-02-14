@@ -1,4 +1,9 @@
-# React homework template
+# Homework Stack
+
+This is the stack of homeworks for studies i took. To view a hosted website using this code follow 
+[this link](https://mikiua.github.io/goit-react-hw/)
+
+## React homework template
 
 Этот проект был создан при помощи
 [Create React App](https://github.com/facebook/create-react-app). Для знакомства

@@ -97,7 +97,6 @@ async function sendRequest(filter='',page=1){
   filter = filter.replaceAll(' ','%20');
 
   const THEurl = `https://pixabay.com/api/?image_type=photo&key=33557563-eb5e97db1c6663d33c38bf2d1&orientation=horizontal&per_page=12&page=` +page+'&q='+filter;
-  // const THEEurl = `https://pixabay.com/api/?image_type=photo&key=33557563-eb5e97db1c6663d33c38bf2d1&orientation=horizontal&per_page=12&page=${page}&q=${filter}`
   
   return new Promise((resolve,reject)=>{
     fetch(THEurl,[])
@@ -111,62 +110,3 @@ async function sendRequest(filter='',page=1){
     })
   })
 }
-
-
-// next is the functional component version, that is not particularry polished but it works
-// export default function App() {
-//   const [imageList,setImageList]=useState([]);   
-//     function updateImageList(newItems=[]){setImageList((prevState)=>[...prevState,...newItems]);}
-
-//   const [filter,setFilter]=useState('');
-//   const [pageNum,setPageNum]=useState(1);
-  
-//   const [isLoading,setIsLoading]=useState('loading');//loading//updating//false
-//   // const [error,setError]=useState(null);
-
-//   // useEffect(()=> {} ,[])
-//   // if (error) return <Notification message='error'/>
-
-//   //page load -> request with filter='' and page = 1;                           make req
-//   //new filter -> request with filter=state.filter and page=1;                  update filter & reset page; only then make req
-//   //new page -> request with filter=this.state.filter and page=this.state.page  update page; only then make req
-
-//   //either done by awaiting setState (which only availible with class components) or useEffect, that only triggers after state updates
-//   //the downside of last approach is multiple rerenderings of whole component (resetting pageNum and isLoading variables)
-
-//   useEffect(()=>{
-//     async function newFilter(){
-//       let newItems = await sendRequest(filter,1);
-//       setImageList(newItems.hits);
-//       setIsLoading(false);
-//     }
-//     setIsLoading('loading');
-//     setPageNum(1);
-//     newFilter();
-//     // eslint-disable-next-line
-//   },[filter])
-
-
-//  useEffect(()=>{
-//     async function newPage(){
-//       let newItems = await sendRequest(filter,pageNum);
-//       updateImageList(newItems.hits)
-//       setIsLoading(false);
-//     }
-//     if(pageNum>1) {
-//       setIsLoading('updating')
-//       newPage();
-//     }
-//     // eslint-disable-next-line react-hooks/exhaustive-deps
-//   },[pageNum])
-
-
-
-//   return (
-//     <Section type='task' title={<a style={{height:'100%'}} href="https://pixabay.com/"><img style={{height:'100%'}} src="https://pixabay.com/static/img/public/leaderboard_b.png" alt="Pixabay"/></a>}>
-//       <Searchbar submitFunc={function (newFilter){setFilter(newFilter)}}/>
-//       <ImageGallery items={imageList} isLoading={isLoading}/>
-//       <LoadButton LoadMoreFunc={function (){setPageNum(pageNum+1)}} />
-//     </Section>
-//   )
-// }

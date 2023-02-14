@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { FormButton, FormInput, FormLabel } from './styles/AddContactForm.styled';
 
 export default class AddContactForm extends Component {
-  static propTypes = {submitFunction:PropTypes.func}
+  static propTypes = {submitFunction:PropTypes.func.isRequired}
 
   state={
     name:'',

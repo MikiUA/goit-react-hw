@@ -21,31 +21,43 @@ export const appRoutes = [
   {
     path: '/hw-01-components',
     label: '1',
-    description: 'hw-01-components',
+    shortDescription:'components',
+    description: 'Декілька базових реакт компонентів',
     element: <App1/>
   },
   {
     path: '/hw-02-feedback',
     label: '2.1',
-    description: '',
+    shortDescription:'feedback form',
+    description: 'Віджет відгуків, використовує два функціональних компонента з хуками',
     element: <App21/>
   },
   {
     path: '/hw-02-phonebook',
     label: '2.2',
-    description: '',
+    shortDescription:'phonebook',
+    description: 'Книга контактів, використовує функціональні компоненти та local storage',
     element: <App22/>
   },
   {
     path: '/hw-03-phonebook',
     label: '3.1',
-    description: '',
+    shortDescription:'phonebook',
+    description: 'Книга контактів, використовує класові компоненти та local storage',
     element: <App31/>
   },
   {
     path: '/hw-03-image-finder',
     label: '3.2',
-    description: '',
+    shortDescription:'gallery',
+    description: 'галерея картинок, використовує Pixabay Api та класові компоненти',
+    element: <App32/>
+  },  
+  {
+    path: '/hw-04-images',
+    label: '4',
+    shortDescription:'gallery',
+    description: 'галерея картинок, використовує Pixabay Api та функціональні компоненти',
     element: <App32/>
   },
 ];

@@ -1,0 +1,2 @@
+export const PixabayTitle =()=> {
+return <a style={{height:'100%'}} href="https://pixabay.com/"><img style={{height:'100%'}} src="https://pixabay.com/static/img/public/leaderboard_b.png" alt="Pixabay"/></a>}

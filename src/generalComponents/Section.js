@@ -40,7 +40,7 @@ function Section({
 Section.propTypes = {
     children:PropTypes.node.isRequired,
     type:PropTypes.oneOf(['titled','labeled','task']),
-    title:PropTypes.string
+    title:PropTypes.oneOfType([PropTypes.string,PropTypes.node])
 }
 
 export default Section

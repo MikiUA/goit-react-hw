@@ -44,7 +44,6 @@ export default class App extends Component {
     this.setState({contacts:(
         this.state.contacts.filter(item=>item.id!==contactID)
       )});
-    // setContacts(prevState=>(prevState.filter(item=>item.id!==contactID)))
   }
 
   removeAllContacts=()=>{this.setState({contacts:[]});}

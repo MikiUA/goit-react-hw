@@ -14,13 +14,10 @@ export function App() {
     
     let storedContacts = JSON.parse(localStorage.getItem('contactList'));
     if (storedContacts){
-      setContacts_then_return_componentDidMount_true(storedContacts);
+      setContacts(storedContacts);
     }
-
-    async function setContacts_then_return_componentDidMount_true(contactList){
-      await setContacts(contactList);
-      componentDidMount.current=true;
-    }
+    componentDidMount.current=true;
+    
   },[]);
 
   useEffect(()=>{
