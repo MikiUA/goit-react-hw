@@ -1,10 +1,10 @@
-// import Notification from 'generalComponents/Notification'
 import Section from 'generalComponents/Section'
 import React, { Component } from 'react'
 import { LoadButton } from './components/Button'
 import ImageGallery from './components/ImageGallery'
 import { Searchbar } from './components/Searchbar'
 import {PixabayTitle} from './components/PixabayTitle'
+import Notification from 'generalComponents/Notification'
 
 export default class App extends Component {
   state={
@@ -25,6 +25,7 @@ export default class App extends Component {
       imageList:[...prevState,...newItems]
     }))
   }
+  
   //page load -> request with filter='' and page = 1;                           make req
   //new filter -> request with filter=state.filter and page=1;                  update filter & reset page; only then make req
   //new page -> request with filter=this.state.filter and page=this.state.page  update page; only then make req
@@ -79,6 +80,7 @@ export default class App extends Component {
   }
 
   render() {
+    if(this.state.error) return <Notification label='Sorry, an error has occured' message={this.state.error.message}/>
     return (
       <Section type='task' title={<PixabayTitle/>}>
         <Searchbar submitFunc={this.changeFilter}/>

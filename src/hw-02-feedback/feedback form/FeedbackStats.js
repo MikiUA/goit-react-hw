@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Notification from 'generalComponents/Notification';
 import { DisplayWrapper, PositiveColoring } from './styles/FeedbackDisplay.styled';
-// import Notification from '../../generalComponents/Notification';
 
 function FeedbackStats({good,bad,neutral}) {
     let total=calcTotal(good,bad,neutral);

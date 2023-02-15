@@ -5,6 +5,7 @@ import { LoadButton } from './components/Button'
 import ImageGallery from './components/ImageGallery'
 import { Searchbar } from './components/Searchbar'
 import {PixabayTitle} from './components/PixabayTitle'
+import Notification from 'generalComponents/Notification'
 
 export default function App() {
   const [imageList,setImageList]=useState([]);   
@@ -12,7 +13,7 @@ export default function App() {
   const [filter,setFilter]=useState('');
   const [pageNum,setPageNum]=useState(1);
   const [isLoading,setIsLoading]=useState('loading');//loading//updating//false
-  const [isMoreAvailible,setIsMoreAvailible]=useState(false);//loading//updating//false
+  const [isMoreAvailible,setIsMoreAvailible]=useState(false);//true/false
   const [error,setError]=useState(null);
 
   function newFilter(newFilter=''){
@@ -49,6 +50,7 @@ export default function App() {
   }
   useEffect(()=>{newFilter()},[])
   
+  if (error) return <Notification label='Sorry, an error has occured' message={error.message}/>
   return (
     <Section type='task' title={<PixabayTitle/>}>
       <Searchbar submitFunc={newFilter}/>
@@ -67,8 +69,7 @@ async function sendRequest(filter='',page=1){
   filter = filter.replaceAll(' ','%20');
 
   const ReqUrl = `https://pixabay.com/api/?image_type=photo&key=33557563-eb5e97db1c6663d33c38bf2d1&orientation=horizontal&per_page=12&page=` +page+'&q='+filter;
-  // const THEEurl = `https://pixabay.com/api/?image_type=photo&key=33557563-eb5e97db1c6663d33c38bf2d1&orientation=horizontal&per_page=12&page=${page}&q=${filter}`
-  
+
   return new Promise((resolve,reject)=>{
     fetch(ReqUrl,[])
     .then(

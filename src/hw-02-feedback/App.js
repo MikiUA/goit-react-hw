@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import Section from 'generalComponents/Section';
-// import Section from '../generalComponents/Section';TODO ask why
 import FeedbackForm from './feedback form/FeedbackForm';
 import FeedbackStats from './feedback form/FeedbackStats';
-// import FeedbackDisplay from './feedback form/FeedbackDisplay';
 
 const initialOptions={'good':0,'neutral':0,'bad':0};
 const availibleOptions=['good','neutral','bad'];
@@ -28,7 +26,6 @@ export const App = () => {
 
       <Section label='Feedback statistics'>
         <FeedbackStats good={feedbackStats.good} bad={feedbackStats.bad} neutral={feedbackStats.neutral} />
-        {/* <FeedbackDisplay stats={feedbackStats}/> */}
       </Section>
     </Section>
   );
