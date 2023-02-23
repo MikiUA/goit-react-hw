@@ -69,14 +69,7 @@ export const appRoutes = [
     shortDescription:'movie gallery',
     description: 'застосунок пошуку та зберігання фільмів',
     element: <App5/>
-  },
-  {
-    path: '/hw-10-create-navigation/*',
-    label: '10',
-    shortDescription:'movie gallery',
-    description: 'застосунок пошуку та зберігання фільмів',
-    element: <App5/>
-  },
+  }
 ];
 
 export default appRoutes;

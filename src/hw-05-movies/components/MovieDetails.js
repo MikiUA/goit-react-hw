@@ -1,7 +1,5 @@
 import React from 'react'
-import { Route, Routes, useParams } from 'react-router-dom'
-import Cast from './Cast'
-import Reviews from './Reviews'
+import { Outlet, useParams } from 'react-router-dom'
 
 export default function MovieDetails() {
     const {movieID}=useParams();
@@ -9,11 +7,7 @@ export default function MovieDetails() {
   return (
     <div>
         <h3> Movie Details ({movieID})</h3>
-        <Routes>
-            <Route index element={<></>}/>
-            <Route path='/cast' element={<Cast/>}/>
-            <Route path='/reviews' element={<Reviews/>}/>
-        </Routes>
+        <Outlet/>
     </div>
   )
 }
