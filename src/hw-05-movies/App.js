@@ -4,22 +4,12 @@ import MovieDetails from "./components/MovieDetails"
 import Movies from "./components/Movies"
 
 export default function App() {
-    const hw5path='/hw-05-movies';
-    const location=useLocation();
 
-    function Logloc({location}){
-        console.log(location);
-        return <></>
-    }
-    Logloc({location});
-
-    return (  
+    return (
     <Routes>
-
         <Route path="/" element={<Home/>}/>
         <Route path="/movies" element={<Movies/>}/>
-        <Route path="/movies/:movieID/*" element={<MovieDetails/>}/>
-        {/* <Route path="/*" element={<Navigate to={hw5path}/>}/> */}
-        <Route path="/*" element={<Link to="/">Link</Link>}/>
-    </Routes>)
-}
+
+        <Route path="/*" element={<Navigate to="/" replace/>}/>   {/* Redirect to <Home /> */}
+    </Routes>
+)}
