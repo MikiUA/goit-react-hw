@@ -8,7 +8,6 @@ import App4 from "hw-04-images/App";
 import App5 from "hw-05-movies/App";
 
 import Notification from "generalComponents/Notification";
-import App from "hw-04-images/App";
 
 export const baseURL='/goit-react-hw'
 export const appRoutes = [
@@ -65,7 +64,7 @@ export const appRoutes = [
     element: <App4/>
   },  
   {
-    path: '/hw-05-movies',
+    path: '/hw-05-movies/*',
     label: '5',
     shortDescription:'movie gallery',
     description: 'застосунок пошуку та зберігання фільмів',
