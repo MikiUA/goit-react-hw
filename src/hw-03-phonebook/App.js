@@ -4,8 +4,6 @@ import AddContactForm from './AddContactForm';
 import DisplayContacts from './DisplayContacts';
 
 export default class App extends Component {
-
-  //we have no props so no constructor here
   state={
     contacts:[],
     filter:''
