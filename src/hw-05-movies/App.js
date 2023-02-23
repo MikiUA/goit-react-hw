@@ -1,10 +1,10 @@
-import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom"
+import { Navigate, Route, Routes} from "react-router-dom"
 import Home from "./components/Home"
-import MovieDetails from "./components/MovieDetails"
+// import MovieDetails from "./components/MovieDetails"
 import Movies from "./components/Movies"
 
 export default function App() {
-
+    
     return (
     <Routes>
         <Route path="/" element={<Home/>}/>
