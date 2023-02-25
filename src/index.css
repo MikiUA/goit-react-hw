@@ -44,14 +44,14 @@ code {
   padding: 0 0.3em;
   line-height: 0;
 }
-.selector-item.selected{
+.selector-item.active{
   background-color: antiquewhite;
 }
 .selector-item:hover{
   background-color: aqua;
 }
 
-.selector-item.selected:hover{
+.selector-item.active:hover{
   background-color: antiquewhite;
 }
 
