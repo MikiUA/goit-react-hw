@@ -1,0 +1,35 @@
+.details-section{
+    display:flex;
+}
+
+.description-segment{
+
+}
+.title{
+    font-size: 100%;
+    margin: 1% 0 0;
+    padding: 0;
+    border-bottom: 1px solid black;
+}
+.description-segment .title{
+ font-size: 70%;
+}
+.description-segment .description{
+font-size: 75%;
+}
+.genre-division{
+border: 1px solid black;
+margin: 0 1%;
+padding: 0 2%;
+border-radius: 50px;
+text-align: center;
+}
+
+.image-container{
+    width: 21%;
+    height: fit-content;
+    margin: 1%;
+}
+.description-container{
+    width: 77%;
+}
