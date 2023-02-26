@@ -1,13 +1,15 @@
+import { lazy } from "react";
+// const = lazy (()=>import());
 import HomePage from "generalComponents/HomePage";
-import { App as App1 } from "hw-01-components/App";
-import { App as App21 } from "hw-02-feedback/App";
-import { App as App22 } from "hw-02-phonebook/App";
-import App31 from "hw-03-phonebook/App";
-import App32 from "hw-03-image-finder/App";
-import App4 from "hw-04-images/App";
-import App5 from "hw-05-movies/App";
-
 import Notification from "generalComponents/Notification";
+
+const App1 = lazy (()=>import("hw-01-components/App"));
+const App21 = lazy (()=>import("hw-02-feedback/App"));
+const App22 = lazy (()=>import("hw-02-phonebook/App"));
+const App31= lazy (()=>import("hw-03-phonebook/App"));
+const App32= lazy (()=>import("hw-03-image-finder/App"));
+const App4= lazy (()=>import("hw-04-images/App"));
+const App5= lazy (()=>import("hw-05-movies/App"));
 
 export const baseURL='/goit-react-hw'
 export const appRoutes = [

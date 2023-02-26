@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import AddContactForm from './AddContactForm';
 import DisplayContacts from './DisplayContacts';
 
-export function App() {
+export default function App() {
   const [contacts,setContacts]=useState([]);
   const componentDidMount=React.useRef(false)
 

@@ -7,7 +7,7 @@ const initialOptions={'good':0,'neutral':0,'bad':0};
 const availibleOptions=['good','neutral','bad'];
 //some translation of object into availible options is required, currently this program will break if these 2 don't match
 
-export const App = () => {
+const App = () => {
   const [feedbackStats,setFeedbackStats]=useState(initialOptions);
 
   function onLeaveFeedback(option){//
@@ -30,3 +30,5 @@ export const App = () => {
     </Section>
   );
 };
+
+export default App

@@ -3,7 +3,7 @@ import ProfileWrapper from "./profile/ProfileWrapper";
 import StatisticsWrapper from "./statistics/StatisticsWrapper";
 import TransactionsWrapper from "./transactionHistory/TransactionsWrapper";
 
-export const App = () => {
+const App = () => {
   return (
     <div className="task-flex-display">
       <ProfileWrapper/> 
@@ -13,3 +13,4 @@ export const App = () => {
     </div>
   );
 };
+export default App
