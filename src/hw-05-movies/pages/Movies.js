@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getSearchMovies as sendRequest} from './fetch_functions';
 import Section from 'generalComponents/Section';
 import Notification from 'generalComponents/Notification';
@@ -6,6 +6,7 @@ import Notification from 'generalComponents/Notification';
 import { Searchbar } from 'hw-03-image-finder/components/Searchbar';
 import { LoadButton } from 'hw-03-image-finder/components/Button';
 import MovieGallery from './components/MovieGallery';
+import { useSearchParams } from 'react-router-dom';
 
 //this is mostly unmodified (except responce fields and components) Gallery application from past tasks. 
 //All the naming reflect image gallery, despite this component is being a movie gallery
@@ -18,9 +19,11 @@ export default function Movies() {
   const [isLoading,setIsLoading]=useState(false);//loading//updating//false
   const [isMoreAvailible,setIsMoreAvailible]=useState(false);//true/false
   const [error,setError]=useState(null);
+  const [searchParams,setSearchParams]=useSearchParams();
 
   function newFilter(newFilter=''){
     setFilter(newFilter);
+    setSearchParams({query:newFilter});
     if (!newFilter) return
     setIsLoading('loading');
     setPageNum(1);
@@ -36,6 +39,12 @@ export default function Movies() {
       setIsLoading(false)
     );
   };
+  useEffect(()=>{
+    const query=searchParams.get("query");
+    if(query) newFilter(query);
+    // eslint-disable-next-line
+  },[])
+
   function loadMore(){
     let newPageNum=pageNum+1;// this is to prevent request from executing before or after setState occurs
     setPageNum(newPageNum);

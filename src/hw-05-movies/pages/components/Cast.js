@@ -22,11 +22,9 @@ export default function Cast() {
   function CastCard({item}){
     const {character,name,profile_path}=item;
     return (
-    <>
     <GalleryCard 
       image={profile_path?('https://image.tmdb.org/t/p/original'+profile_path):''} 
       label={<span><i>{name}</i> as <b>{character}</b></span>}/>
-    </>
   )}
 if (error) {
   console.log(error);
@@ -35,7 +33,7 @@ if (error) {
   return (
     <Section title='Cast'>
       <div className={styles['ImageGallery']}>
-      {movieCast.map(item=><CastCard item={item}/>)}
+      {movieCast.map(item=><CastCard key={item.id } item={item}/>)}
       </div>
     </Section>
   )
