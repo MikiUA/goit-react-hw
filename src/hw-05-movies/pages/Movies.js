@@ -39,11 +39,12 @@ export default function Movies() {
       setIsLoading(false)
     );
   };
+
   useEffect(()=>{
     const query=searchParams.get("query");
     if(query) newFilter(query);
-    // eslint-disable-next-line
-  },[])
+    //eslint-disable-next-line
+  },[searchParams])
 
   function loadMore(){
     let newPageNum=pageNum+1;// this is to prevent request from executing before or after setState occurs

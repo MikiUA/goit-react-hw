@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
 import { Link, Outlet, useNavigate, useParams } from 'react-router-dom'
 import { getMovieDetails } from './fetch_functions';
 import Notification from 'generalComponents/Notification';
@@ -62,8 +62,9 @@ export default function MovieDetails() {
             </div>
           </div>
         </div>
-
-        <Outlet/>
+	<Suspense fallback={<></>}>
+        	<Outlet/>
+	</Suspense>
     </div>
   )
 }

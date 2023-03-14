@@ -6,10 +6,11 @@ import Notification from "generalComponents/Notification";
 const App1 = lazy (()=>import("hw-01-components/App"));
 const App21 = lazy (()=>import("hw-02-feedback/App"));
 const App22 = lazy (()=>import("hw-02-phonebook/App"));
-const App31= lazy (()=>import("hw-03-phonebook/App"));
-const App32= lazy (()=>import("hw-03-image-finder/App"));
-const App4= lazy (()=>import("hw-04-images/App"));
-const App5= lazy (()=>import("hw-05-movies/App"));
+const App31 = lazy (()=>import("hw-03-phonebook/App"));
+const App32 = lazy (()=>import("hw-03-image-finder/App"));
+const App4 = lazy (()=>import("hw-04-images/App"));
+const App5 = lazy (()=>import("hw-05-movies/App"));
+const App6 = lazy (()=>import("hw-06-phonebook/App"))
 
 export const baseURL='/goit-react-hw'
 export const appRoutes = [
@@ -71,6 +72,13 @@ export const appRoutes = [
     shortDescription:'movie gallery',
     description: 'застосунок пошуку та зберігання фільмів',
     element: <App5/>
+  },  
+  {
+    path: '/hw-06-phonebook/',
+    label: '6',
+    shortDescription:'phonebook redux',
+    description: 'книга контактів з використанням redux',
+    element: <App6/>
   }
 ];
 
