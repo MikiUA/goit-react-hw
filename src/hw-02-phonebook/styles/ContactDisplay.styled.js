@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContactList = styled.ul`
 width:fit-content;
 padding-right:1em;
-height:10em;
+height:20em;
 border-left:1px solid black;
 overflow-y:auto;
 `
