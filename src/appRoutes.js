@@ -12,6 +12,7 @@ const App4 = lazy (()=>import("hw-04-images/App"));
 const App5 = lazy (()=>import("hw-05-movies/App"));
 const App6 = lazy (()=>import("hw-06-phonebook/App"))
 const App7 = lazy (()=>import("hw-07-phonebook/App"))
+const App8 = lazy (()=>import("hw-08-phonebook/App"))
 
 export const baseURL='/goit-react-hw'
 export const appRoutes = [
@@ -87,6 +88,13 @@ export const appRoutes = [
     shortDescription:'phonebook redux',
     description: 'книга контактів з використанням asynchronous redux та api',
     element: <App7/>
+  },  
+  {
+    path: '/hw-08-phonebook/*',
+    label: '8',
+    shortDescription:'user phonebook',
+    description: 'книга контактів користувача, треба логінитись',
+    element: <App8/>
   }
 ];
 
