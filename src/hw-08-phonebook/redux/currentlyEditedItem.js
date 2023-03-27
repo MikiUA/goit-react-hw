@@ -20,6 +20,7 @@ const editedItem = (payload)=>{
 
 export function reducer(item=initialState,action){
     // console.log('action',action)//by the way also logs every other action en every connected reducer
+    console.log("on the item ",item,"\n we will do ",action)
     switch (action.type){
         case (addContact.type):{
             return  newItem()

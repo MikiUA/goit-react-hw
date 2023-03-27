@@ -1,14 +1,14 @@
 import { AddCircle, Menu as MenuIcon } from '@mui/icons-material'
 import { AppBar, Box, IconButton, ListItemText, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import { addContact } from 'hw-08-phonebook/redux/currentlyEditedItem';
-import { userSelector } from 'hw-08-phonebook/redux/userApi';
+import { useCheckUserQuery, useLogoutMutation} from 'hw-08-phonebook/redux/userApi';
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export default function TitleBar() {
 
-    const user=useSelector(userSelector);
-    console.log(user);
+    const {data:user}=useCheckUserQuery();
+    const [logout,{isLoading:isLogoutLoading}]=useLogoutMutation();
     const dispatch=useDispatch();
     const [anchorElMenu,setAnchorElMenu]=useState(null);
 
@@ -19,6 +19,9 @@ export default function TitleBar() {
         setAnchorElMenu(null);
     }
 
+    function handleLogout(){
+      logout()
+    }
     function handleOpenAddContact(){
       dispatch(addContact());
     }
@@ -54,8 +57,8 @@ export default function TitleBar() {
             open={Boolean(anchorElMenu)}
             onClose={handleCloseLoginMenu}
           >
-              <ListItemText primary={'username'} secondary={'mail'}/>
-              <MenuItem onClick={handleCloseLoginMenu}>
+              <ListItemText primary={user.name} secondary={user.email}/>
+              <MenuItem onClick={handleLogout} disabled={isLogoutLoading}>
                 <Typography textAlign="center">Logout</Typography>
               </MenuItem>
           </Menu>

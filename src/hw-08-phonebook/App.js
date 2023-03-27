@@ -38,12 +38,13 @@ const routes=(isUserLoggedIn)=>{
 }
 
 function SubApp(){
+  let uq=useCheckUserQuery();console.log('qr:',uq);
+
   let {data:user,status}=useCheckUserQuery();
   useEffect(()=>{
     const authToken=getAuthToken();
-    // if (authToken) return
-    console.log('Current user : ',user)
   },[user])
   if (status==='pending') return <Loader/>;
+  if (status==='rejected') return routes(null);
   return routes(user);
 }

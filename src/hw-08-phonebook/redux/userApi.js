@@ -57,4 +57,3 @@ export const userApi= createApi({
 })
 
 export const {useLoginMutation,useLogoutMutation,useSignupMutation,useCheckUserQuery} = userApi;
-export const userSelector=(state)=>(state);

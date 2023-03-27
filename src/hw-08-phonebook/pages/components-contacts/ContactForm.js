@@ -8,8 +8,8 @@ import styles from '../styles/ContactFormOverlay.module.css'
 export default function ContactForm() {
 
     const currentContact=useSelector(state=>state[editedItemName]);
-    const [name,setName]=useState(currentContact && currentContact.name);
-    const [number,setNumber]=useState(currentContact && currentContact.number);
+    const [name,setName]=useState('');
+    const [number,setNumber]=useState('');
 
     const [isLoading,setIsLoading]=useState(false);
     const [error,setError]=useState(null);
@@ -32,8 +32,16 @@ export default function ContactForm() {
         if (isError2){setError(err2);}
     },[isError1,isError2,err1,err2]);
 
+    useEffect(()=>{
+        console.log ('changed contact edit to :',currentContact);
+        setName((currentContact&&currentContact.name)||'');
+        setNumber((currentContact && currentContact.number)||'');
+    },[currentContact])
+
     function handleSubmit(){
+        
         setError(null);
+
         if (!currentContact.id) addContact({name,number});
         else editContact({id:currentContact.id,name,number});
         //we either add or edit contact here.
@@ -44,15 +52,23 @@ export default function ContactForm() {
         //if isSuccess we dispatch(cancelEdit())
         //if isError we console.log error and do nothing
     }
-    function handleCancel(){dispatch(cancelEdit())}
-
+    function handleCancel(){
+        dispatch(cancelEdit());
+        setError(null);
+        setIsLoading(false);
+    }
+ 
+    const inputParams={namePattern:"^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$",
+    nameTitle:"Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan",
+    // eslint-disable-next-line
+    numberPattern:`/d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}`,numberTitle:"Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"}
     if (!currentContact) return null
     return (
         <div className={styles.wrapper}>
             <div className={styles.overlay}>
         <form onSubmit={e=>{e.preventDefault();handleSubmit()}}>
-            <TextField label='name' value={name} onChange={e=>setName(e.target.value)}/>
-            <TextField label='number' value={number} onChange={e=>setNumber(e.target.value)}/>
+            <TextField label='name' value={name} onChange={e=>setName(e.target.value)} inputProps={{ pattern: inputParams.namePattern,title:inputParams.nameTitle }} required/>
+            <TextField label='number' value={number} onChange={e=>setNumber(e.target.value)} inputProps={{ pattern: inputParams.numberPattern,title:inputParams.numberTitle }} required/>
             <Button type='submit' disabled={isLoading}>{isLoading?'Please wait':'Submit'}</Button>
             <Button type='button' onClick={handleCancel}>cancel</Button>
         </form>
