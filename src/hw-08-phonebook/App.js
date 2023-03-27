@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { Routes,Route, Navigate } from 'react-router-dom'
 import { Provider} from 'react-redux'
 import {store}from './redux/store'
+import { useCheckUserQuery } from './redux/userApi'
 
-import { Routes,Route, Navigate } from 'react-router-dom'
 import ContactsPage from './pages/ContactsPage'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
-import { getAuthToken } from './functions/authTokenHandle'
-
-//eslint-disable-next-line
-import { useCheckUserQuery } from './redux/userApi'
 import Loader from 'generalComponents/Loader'
 
 export default function App() {
@@ -38,12 +35,7 @@ const routes=(isUserLoggedIn)=>{
 }
 
 function SubApp(){
-  let uq=useCheckUserQuery();console.log('qr:',uq);
-
   let {data:user,status}=useCheckUserQuery();
-  useEffect(()=>{
-    const authToken=getAuthToken();
-  },[user])
   if (status==='pending') return <Loader/>;
   if (status==='rejected') return routes(null);
   return routes(user);
