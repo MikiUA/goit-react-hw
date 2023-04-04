@@ -33,7 +33,8 @@ export const EmailInput=()=>{
 }
 
 export const PasswordInput=()=>{
-    const pattern='';//`^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$`,title='may contain only letters, apostrophe, dash and spaces'
+    const pattern='';//`^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$`,
+        title='may contain only letters, apostrophe, dash and spaces'
     return <TextField
         {...params(pattern,title)}
         name="password"
