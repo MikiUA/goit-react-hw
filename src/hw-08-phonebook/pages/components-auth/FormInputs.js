@@ -4,12 +4,12 @@ const params=(pattern,title)=>({
     margin:'normal',
     required:true,
     fullWidth:true,
-    inputProps:{ pattern: pattern,title:title }
+    // inputProps:{ pattern: pattern,title:title }
 })
 
 export const UsernameInput=()=>{
     //eslint-disable-next-line
-    const pattern='',//`^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$`,
+    const pattern=`^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$`,
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
     return <TextField
         {...params(pattern,title)}
@@ -21,7 +21,7 @@ export const UsernameInput=()=>{
 
 export const EmailInput=()=>{
     //eslint-disable-next-line
-    const pattern='',//`[a-z0-9!#$%&'*+/=?^_\`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?`,
+    const pattern=`[a-z0-9!#$%&'*+/=?^_\`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?`,
         title="Please enter a valid email address"
     return <TextField
         {...params(pattern,title)}
@@ -33,7 +33,7 @@ export const EmailInput=()=>{
 }
 
 export const PasswordInput=()=>{
-    const pattern='',//`^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$`,
+    const pattern=`^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$`,
         title='may contain only letters, apostrophe, dash and spaces'
     return <TextField
         {...params(pattern,title)}

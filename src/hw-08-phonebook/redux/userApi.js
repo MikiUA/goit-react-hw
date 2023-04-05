@@ -34,7 +34,7 @@ export const userApi= createApi({
                 body
             }),
             transformResponse:transformAuthResponse,
-            invalidatesTags:['user']
+            invalidatesTags:(result)=>result?['user']:[]
         }),
         signup:builder.mutation({
             query: (body)=>({
@@ -43,7 +43,7 @@ export const userApi= createApi({
                 body
             }),
             transformResponse:transformAuthResponse,
-            invalidatesTags:['user']
+            invalidatesTags:(result)=>result?['user']:[]
         }),
         logout:builder.mutation({
             query: ()=>({
